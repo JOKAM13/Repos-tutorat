@@ -1,0 +1,318 @@
+<section id="accueil" class="page-hero hero-section">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">Tutorat simple • rapide • professionnel</span>
+      <div class="section-title hero-copy">
+        <h1>Des tuteurs qualifiés pour accompagner <span class="highlight">ta réussite</span></h1>
+        <p>
+          Étude Réussie aide les élèves à trouver un accompagnement scolaire adapté à leur niveau, 
+          leur matière et leurs objectifs. Que ce soit pour de l’aide aux devoirs, une remise à niveau ou
+           une préparation d’examen, nous vous mettons en contact avec des tuteurs sérieux et motivés.
+        </p>
+      </div>
+
+      <div class="hero-actions">
+        <a href="#trouver" class="btn btn-primary">Trouver un tuteur</a>
+        <a href="#devenir" class="btn btn-light">Devenir tuteur</a>
+      </div>
+
+      <div class="hero-points">
+        <span>✔ Formulaire rapide</span>
+        <span>✔ Réponse en moins de 24 h</span>
+        <span>✔ Accompagnement adapté à chaque niveau</span>
+        <span>✔ Tuteurs sérieux et sélectionnés</span>
+      </div>
+    </div>
+
+    <div class="hero-visual card">
+      <div class="hero-badge">+ 24 h</div>
+      <div class="hero-stack">
+        <article class="demo-card demo-card-top">
+          <div class="badge">Zones desservies</div>
+          <h3>Un service de tutorat accessible selon vos besoins</h3>
+          <p class="muted">Québec, Montréal, Laval, Gatineau, Sherbrooke, Ottawa, Toronto et d’autres villes selon le besoin.</p>
+        </article>
+
+        <article class="demo-card demo-card-bottom">
+          <div class="badge gold-badge">Nos services</div>
+          <h3>Accompagnement scolaire pensé pour rassurer</h3>
+          <p class="muted">Aide aux devoirs, préparation d’examen, remise à niveau, méthodologie et suivi personnalisé selon le niveau.</p>
+        </article>
+      </div>
+
+      <div class="ticker-wrap">
+        <div class="ticker-track">
+          <span>Québec</span>
+          <span>Montréal</span>
+          <span>Laval</span>
+          <span>Gatineau</span>
+          <span>Sherbrooke</span>
+          <span>Ottawa</span>
+          <span>Toronto</span>
+          <span>Secondaire</span>
+          <span>Cégep</span>
+          <span>Université</span>
+          <span>Aide aux devoirs</span>
+          <span>Préparation d’examen</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="container">
+    <div class="section-title center-title">
+      <span class="eyebrow">POURQUOI NOUS FAIRE CONFIANCE</span>
+      <h2>Une solution simple, sérieuse et rassurante pour bien commencer</h2>
+      <p>L’essentiel est déjà là pour aider les élèves, rassurer les parents et démarrer sur de bonnes bases.</p>
+    </div>
+
+    <div class="grid grid-3">
+      <article *ngFor="let benefit of benefits" class="panel benefit-card">
+        <h3>{{ benefit.title }}</h3>
+        <p class="muted">{{ benefit.description }}</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="tarifs" class="section">
+  <div class="container">
+    <div class="section-title center-title">
+      <span class="eyebrow">NOS TARIFS</span>
+      <h2>Des tarifs clairs et accessibles selon le niveau</h2>
+      <p>Des formules simples, transparentes et adaptées aux besoins des élèves et des parents.</p>
+    </div>
+
+    <div class="grid grid-3">
+      <article *ngFor="let plan of pricePlans; let index = index" class="pricing-card" [class.dark]="index === 1" [class.primary]="index === 2">
+        <h3>{{ plan.level }}</h3>
+        <div class="price-lines">
+          <div>
+            <span class="label">En ligne</span>
+            <strong>{{ plan.online }}</strong>
+          </div>
+          <div>
+            <span class="label">À domicile / en présentiel</span>
+            <strong>{{ plan.inPerson }}</strong>
+          </div>
+        </div>
+        <p class="muted">{{ plan.note }}</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container forms-grid">
+    <article id="trouver" class="card form-card">
+      <div class="form-head">
+        <span class="eyebrow">Élève / parent</span>
+        <h2>Trouver un tuteur</h2>
+        <p class="muted">Prénom, nom, courriel et classe sont obligatoires pour bien qualifier la demande.</p>
+      </div>
+
+      <form class="form-layout" [formGroup]="tutorRequestForm" (ngSubmit)="submitTutorRequest()">
+        <div class="input-grid">
+          <div class="field">
+            <label for="student-firstname">Prénom *</label>
+            <input id="student-firstname" type="text" formControlName="firstName" placeholder="" />
+            <small class="error" *ngIf="hasError('tutorRequest', 'firstName')">Ce champ est obligatoire.</small>
+          </div>
+
+          <div class="field">
+            <label for="student-lastname">Nom *</label>
+            <input id="student-lastname" type="text" formControlName="lastName" placeholder="" />
+            <small class="error" *ngIf="hasError('tutorRequest', 'lastName')">Ce champ est obligatoire.</small>
+          </div>
+
+          <div class="field">
+            <label for="student-email">Courriel *</label>
+            <input id="student-email" type="email" formControlName="email" placeholder="" />
+            <small class="error" *ngIf="hasError('tutorRequest', 'email')">Entre un courriel valide.</small>
+          </div>
+
+          <div class="field">
+            <label for="student-phone">Téléphone</label>
+            <input id="student-phone" type="text" formControlName="phone" placeholder="514 000 0000" />
+          </div>
+
+          <div class="field">
+            <label for="student-school">École</label>
+            <input id="student-school" type="text" formControlName="school" placeholder="Nom de l’école" />
+          </div>
+
+          <div class="field">
+            <label for="student-class">Classe *</label>
+            <input id="student-class" type="text" formControlName="classLevel" placeholder="Ex. Secondaire 1, Secondaire 2, Cégep" />
+            <small class="error" *ngIf="hasError('tutorRequest', 'classLevel')">La classe est obligatoire.</small>
+          </div>
+
+          <div class="field">
+            <label for="student-subject">Matière</label>
+            <input id="student-subject" type="text" formControlName="subject" placeholder="Ex. Mathématiques" />
+          </div>
+
+          <div class="field">
+            <label for="student-city">Ville</label>
+            <input id="student-city" type="text" formControlName="city" placeholder="Québec" />
+          </div>
+
+          <div class="field">
+            <label for="student-mode">Mode</label>
+            <select id="student-mode" formControlName="mode">
+              <option *ngFor="let mode of tutorRequestModes" [value]="mode">{{ mode }}</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="student-availability">Disponibilités</label>
+            <input id="student-availability" type="text" formControlName="availability" placeholder="Soirs de semaine" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="student-need">Décris le besoin</label>
+          <textarea id="student-need" formControlName="need" placeholder="Explique la matière, le niveau et l’objectif recherché."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary submit-btn" [disabled]="loadingTutorRequest">
+          {{ loadingTutorRequest ? 'Envoi en cours...' : 'Envoyer la demande' }}
+        </button>
+
+        <div class="status success" *ngIf="tutorRequestState === 'success'">La demande a bien été enregistrée.</div>
+        <div class="status error-state" *ngIf="tutorRequestState === 'error'">Impossible d’envoyer la demande. .</div>
+      </form>
+    </article>
+
+    <article id="devenir" class="card form-card soft-highlight">
+      <div class="form-head">
+        <span class="eyebrow">Recrutement</span>
+        <h2>Devenir tuteur</h2>
+        <p class="muted">Nom complet et courriel sont obligatoires. Les matières sont saisies librement dans un champ texte.</p>
+      </div>
+
+      <form class="form-layout" [formGroup]="tutorApplicationForm" (ngSubmit)="submitTutorApplication()">
+        <div class="input-grid">
+          <div class="field field-span-2">
+            <label for="tutor-name">Nom complet *</label>
+            <input id="tutor-name" type="text" formControlName="fullName" placeholder="" />
+            <small class="error" *ngIf="hasError('tutorApplication', 'fullName')">Ce champ est obligatoire.</small>
+          </div>
+
+          <div class="field">
+            <label for="tutor-email">Courriel *</label>
+            <input id="tutor-email" type="email" formControlName="email" placeholder="" />
+            <small class="error" *ngIf="hasError('tutorApplication', 'email')">Entre un courriel valide.</small>
+          </div>
+
+          <div class="field">
+            <label for="tutor-phone">Téléphone</label>
+            <input id="tutor-phone" type="text" formControlName="phone" placeholder="514 000 0000" />
+          </div>
+
+          <div class="field field-span-2">
+            <label for="tutor-subjects">Matières *</label>
+            <input id="tutor-subjects" type="text" formControlName="subjects" placeholder="Ex. Chimie, mathématiques, physique, aide aux devoirs" />
+            <small class="error" *ngIf="hasError('tutorApplication', 'subjects')">Merci d’indiquer au moins une matière.</small>
+          </div>
+
+          <div class="field">
+            <label for="tutor-levels">Classes / niveaux</label>
+            <input id="tutor-levels" type="text" formControlName="coveredLevels" placeholder="Secondaire, cégep, université" />
+          </div>
+
+          <div class="field">
+            <label for="tutor-institutions">Établissements fréquentés</label>
+            <input id="tutor-institutions" type="text" formControlName="institutions" placeholder="" />
+          </div>
+
+          <div class="field">
+            <label for="tutor-mode">Mode</label>
+            <select id="tutor-mode" formControlName="mode">
+              <option *ngFor="let mode of tutorApplicationModes" [value]="mode">{{ mode }}</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="tutor-city">Ville</label>
+            <input id="tutor-city" type="text" formControlName="city" placeholder="" />
+          </div>
+
+          <div class="field field-span-2">
+            <label for="tutor-availability">Disponibilités</label>
+            <input id="tutor-availability" type="text" formControlName="availability" placeholder="Soirs et week-ends" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="tutor-about">Présentation</label>
+          <textarea id="tutor-about" formControlName="about" placeholder="Parle de ton parcours, de ta pédagogie et de ton expérience."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-secondary submit-btn" [disabled]="loadingTutorApplication">
+          {{ loadingTutorApplication ? 'Envoi en cours...' : 'Soumettre la candidature' }}
+        </button>
+
+        <div class="status success" *ngIf="tutorApplicationState === 'success'">La candidature tuteur a bien été enregistrée.</div>
+        <div class="status error-state" *ngIf="tutorApplicationState === 'error'">Impossible d’envoyer la candidature.</div>
+      </form>
+    </article>
+  </div>
+</section>
+
+<section id="contact" class="section-tight">
+  <div class="container contact-wrap card">
+    <div>
+      <span class="eyebrow">Contact</span>
+      <h2>Un besoin précis ? Écris-nous directement</h2>
+      <p class="muted">Nous restons facilement joignables pour répondre rapidement à vos besoins.</p>
+
+      <div class="contact-list">
+        <div class="panel">
+          <strong>Courriel</strong>
+          <p class="muted"></p>
+        </div>
+        <div class="panel">
+          <strong>Téléphone</strong>
+          <p class="muted">514 663 1877</p>
+        </div>
+        <div class="panel">
+          <strong>Présence</strong>
+          <p class="muted">En ligne et en présentiel, selon la matière et la ville.</p>
+        </div>
+      </div>
+    </div>
+
+    <form class="panel contact-form" [formGroup]="contactForm" (ngSubmit)="submitContactMessage()">
+      <div class="field">
+        <label for="contact-name">Nom complet *</label>
+        <input id="contact-name" type="text" formControlName="fullName" placeholder="Prénom Nom" />
+        <small class="error" *ngIf="hasError('contact', 'fullName')">Ce champ est obligatoire.</small>
+      </div>
+
+      <div class="field">
+        <label for="contact-email">Courriel *</label>
+        <input id="contact-email" type="email" formControlName="email" placeholder="ton@email.com" />
+        <small class="error" *ngIf="hasError('contact', 'email')">Entre un courriel valide.</small>
+      </div>
+
+      <div class="field">
+        <label for="contact-phone">Téléphone</label>
+        <input id="contact-phone" type="text" formControlName="phone" placeholder="514 000 0000" />
+      </div>
+
+      <div class="field">
+        <label for="contact-message">Message *</label>
+        <textarea id="contact-message" formControlName="message" placeholder="Explique ton besoin ou pose ta question."></textarea>
+        <small class="error" *ngIf="hasError('contact', 'message')">Le message est obligatoire.</small>
+      </div>
+
+      <button type="submit" class="btn btn-primary">{{ loadingContact ? 'Envoi en cours...' : 'Envoyer le message' }}</button>
+
+      <div class="status success" *ngIf="contactState === 'success'">Le message a bien été enregistré dans la base de données.</div>
+      <div class="status error-state" *ngIf="contactState === 'error'">Impossible d’envoyer le message. Vérifie que le backend ASP.NET est démarré.</div>
+    </form>
+  </div>
+</section>

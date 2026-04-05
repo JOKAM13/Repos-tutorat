@@ -1,0 +1,184 @@
+<section class="admin-page">
+  <div class="container admin-shell">
+    <div class="admin-header card">
+      <div>
+        <span class="eyebrow">Administration</span>
+        <h1>Tableau de consultation</h1>
+        <p class="muted">Consulte les demandes soumises par les visiteurs sans activer tout le système de comptes pour cette livraison.</p>
+      </div>
+
+      <div class="admin-actions" *ngIf="authenticated">
+        <button type="button" class="btn btn-light" (click)="loadDashboard()" [disabled]="loadingDashboard">
+          {{ loadingDashboard ? 'Actualisation...' : 'Actualiser' }}
+        </button>
+        <button type="button" class="btn btn-primary" (click)="logout()">Déconnexion</button>
+      </div>
+    </div>
+
+    <div class="status error-state" *ngIf="dashboardError">{{ dashboardError }}</div>
+    <div class="status success" *ngIf="actionMessage">{{ actionMessage }}</div>
+
+    <div class="dashboard-grid" *ngIf="authenticated && dashboard">
+      <article class="admin-panel card">
+        <div class="panel-head">
+          <h2>Demandes trouver un tuteur</h2>
+          <span>{{ dashboard.tutorRequests.length }}</span>
+        </div>
+
+        <div class="table-wrap" *ngIf="dashboard.tutorRequests.length; else emptyRequests">
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Nom</th>
+                <th>Classe</th>
+                <th>Matière</th>
+                <th>Contact</th>
+                <th>Détails</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of dashboard.tutorRequests; trackBy: trackById">
+                <td>{{ item.createdAtUtc | date: 'dd/MM/yyyy HH:mm' }}</td>
+                <td>{{ item.firstName }} {{ item.lastName }}</td>
+                <td>{{ item.classLevel }}</td>
+                <td>{{ item.subject || '—' }}</td>
+                <td>{{ item.email }}<br />{{ item.phone || '—' }}</td>
+                <td>
+                  École: {{ item.school || '—' }}<br />
+                  Mode: {{ item.mode || '—' }}<br />
+                  Ville: {{ item.city || '—' }}<br />
+                  Disponibilités: {{ item.availability || '—' }}<br />
+                  Besoin: {{ item.need || '—' }}
+                </td>
+                <td>
+                  <button type="button" class="btn btn-light btn-danger" (click)="deleteTutorRequest(item)">
+                    Supprimer
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="admin-panel card">
+        <div class="panel-head">
+          <h2>Candidatures devenir tuteur</h2>
+          <span>{{ dashboard.tutorApplications.length }}</span>
+        </div>
+
+        <div class="table-wrap" *ngIf="dashboard.tutorApplications.length; else emptyApplications">
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Nom</th>
+                <th>Matières</th>
+                <th>Niveaux</th>
+                <th>Contact</th>
+                <th>Détails</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of dashboard.tutorApplications; trackBy: trackById">
+                <td>{{ item.createdAtUtc | date: 'dd/MM/yyyy HH:mm' }}</td>
+                <td>{{ item.fullName }}</td>
+                <td>{{ item.subjects }}</td>
+                <td>{{ item.coveredLevels || '—' }}</td>
+                <td>{{ item.email }}<br />{{ item.phone || '—' }}</td>
+                <td>
+                  Établissements: {{ item.institutions || '—' }}<br />
+                  Mode: {{ item.mode || '—' }}<br />
+                  Ville: {{ item.city || '—' }}<br />
+                  Disponibilités: {{ item.availability || '—' }}<br />
+                  Présentation: {{ item.about || '—' }}
+                </td>
+                <td>
+                  <button type="button" class="btn btn-light btn-danger" (click)="deleteTutorApplication(item)">
+                    Supprimer
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="admin-panel card">
+        <div class="panel-head">
+          <h2>Messages contact</h2>
+          <span>{{ dashboard.contactMessages.length }}</span>
+        </div>
+
+        <div class="table-wrap" *ngIf="dashboard.contactMessages.length; else emptyContacts">
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Nom</th>
+                <th>Courriel</th>
+                <th>Téléphone</th>
+                <th>Message</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of dashboard.contactMessages; trackBy: trackById">
+                <td>{{ item.createdAtUtc | date: 'dd/MM/yyyy HH:mm' }}</td>
+                <td>{{ item.fullName }}</td>
+                <td>{{ item.email }}</td>
+                <td>{{ item.phone || '—' }}</td>
+                <td>{{ item.message }}</td>
+                <td>
+                  <button type="button" class="btn btn-light btn-danger" (click)="deleteContactMessage(item)">
+                    Supprimer
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="login-overlay" *ngIf="!authenticated">
+    <div class="login-card card">
+      <span class="eyebrow">Accès protégé</span>
+      <h2>Connexion administrateur</h2>
+      <p class="muted">Entre le login et le mot de passe admin pour consulter les soumissions.</p>
+
+      <form [formGroup]="loginForm" (ngSubmit)="submitLogin()" class="login-form">
+        <div class="field">
+          <label for="admin-username">Login</label>
+          <input id="admin-username" type="text" formControlName="username" placeholder="admin" />
+        </div>
+
+        <div class="field">
+          <label for="admin-password">Mot de passe</label>
+          <input id="admin-password" type="password" formControlName="password" placeholder="••••••••" />
+        </div>
+
+        <div class="status error-state" *ngIf="loginError">{{ loginError }}</div>
+        <button type="submit" class="btn btn-primary full-width" [disabled]="loadingLogin">
+          {{ loadingLogin ? 'Vérification...' : 'Ouvrir l’espace admin' }}
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <ng-template #emptyRequests>
+    <div class="empty-state">Aucune demande élève pour le moment.</div>
+  </ng-template>
+
+  <ng-template #emptyApplications>
+    <div class="empty-state">Aucune candidature tuteur pour le moment.</div>
+  </ng-template>
+
+  <ng-template #emptyContacts>
+    <div class="empty-state">Aucun message de contact pour le moment.</div>
+  </ng-template>
+</section>

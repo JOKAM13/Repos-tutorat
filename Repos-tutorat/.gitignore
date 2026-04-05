@@ -1,0 +1,11 @@
+/dist
+/node_modules
+/.angular
+/.idea
+/.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+coverage
+npm-debug.log
+yarn-error.log

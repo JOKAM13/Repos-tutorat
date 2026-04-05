@@ -1,0 +1,44 @@
+.site-footer {
+  padding: 0 0 1.2rem;
+}
+
+.footer-shell {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+}
+
+.footer-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #ffd862, #f1b90b);
+  color: var(--navy);
+  font-weight: 900;
+}
+
+.footer-shell h4 {
+  margin: 0 0 1rem;
+}
+
+.footer-shell a,
+.footer-shell span,
+.footer-shell p {
+  display: block;
+  margin-bottom: 0.6rem;
+}
+
+@media (max-width: 960px) {
+  .footer-shell {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,151 @@
+.admin-page {
+  position: relative;
+  min-height: calc(100vh - 180px);
+  padding: 2rem 0 4rem;
+  background:
+    radial-gradient(circle at top left, rgba(41, 110, 255, 0.14), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(255, 189, 46, 0.18), transparent 28%),
+    #f5f8ff;
+}
+
+.admin-shell {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+}
+
+.admin-header h1 {
+  margin: 0.3rem 0 0.5rem;
+}
+
+.admin-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.dashboard-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.admin-panel {
+  overflow: hidden;
+}
+
+.panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.panel-head h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.panel-head span {
+  min-width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: #edf2ff;
+  font-weight: 700;
+  color: #2146c7;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 0.95rem;
+  border-top: 1px solid #e8edf7;
+  text-align: left;
+  vertical-align: top;
+  font-size: 0.96rem;
+}
+
+th {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #6b7894;
+  background: #f8faff;
+}
+
+.empty-state {
+  padding: 1rem;
+  border: 1px dashed #c9d3ea;
+  border-radius: 16px;
+  color: #64748b;
+  background: #fbfdff;
+}
+
+.login-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(12, 22, 46, 0.62);
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  z-index: 30;
+}
+
+.login-card {
+  width: min(100%, 460px);
+  padding: 2rem;
+}
+
+.login-card h2 {
+  margin: 0.3rem 0 0.5rem;
+}
+
+.login-form {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.full-width {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .admin-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  th,
+  td {
+    min-width: 160px;
+  }
+}
+
+
+.btn-danger {
+  border-color: rgba(180, 35, 24, 0.18);
+  color: #8a1c13;
+  background: #fff5f4;
+}
+
+.btn-danger:hover {
+  background: #ffe6e2;
+}
