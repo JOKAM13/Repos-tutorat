@@ -1,0 +1,8 @@
+**/.vs
+**/bin
+**/obj
+publish
+.git
+.gitignore
+Dockerfile
+docker-compose.yml
