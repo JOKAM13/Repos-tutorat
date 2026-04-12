@@ -1,57 +1,65 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\lenat\\Desktop\\repos tutorat\\tutorat\\backend\\",
+  "WorkspaceRootPath": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git\\Repos-tutorat\\backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|c:\\users\\lenat\\desktop\\repos tutorat\\tutorat\\backend\\src\\etudereussie.api\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|solutionrelative:src\\etudereussie.api\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|c:\\users\\lenat\\desktop\\repos tutorat\\tutorat\\backend\\src\\etudereussie.api\\controllers\\contactmessagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|solutionrelative:src\\etudereussie.api\\controllers\\contactmessagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|c:\\users\\lenat\\desktop\\repos tutorat\\tutorat\\backend\\src\\etudereussie.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|solutionrelative:src\\etudereussie.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|c:\\users\\lenat\\desktop\\repos tutorat\\tutorat\\backend\\src\\etudereussie.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|solutionrelative:src\\etudereussie.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|c:\\users\\lenat\\desktop\\repos tutorat\\tutorat\\backend\\src\\etudereussie.api\\options\\adminaccessoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|solutionrelative:src\\etudereussie.api\\options\\adminaccessoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|c:\\users\\lenat\\desktop\\repos tutorat\\tutorat\\backend\\src\\etudereussie.api\\appsettings.production.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|solutionrelative:src\\etudereussie.api\\appsettings.production.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|c:\\users\\lenat\\desktop\\repos tutorat\\tutorat\\backend\\src\\etudereussie.api\\controllers\\tutorapplicationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|c:\\users\\lenat\\desktop\\repos tutorat\\repos git\\repos-tutorat\\backend\\src\\etudereussie.api\\controllers\\tutorapplicationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|solutionrelative:src\\etudereussie.api\\controllers\\tutorapplicationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|c:\\users\\lenat\\desktop\\repos tutorat\\tutorat\\backend\\src\\etudereussie.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|c:\\users\\lenat\\desktop\\repos tutorat\\repos git\\repos-tutorat\\backend\\src\\etudereussie.api\\controllers\\contactmessagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|solutionrelative:src\\etudereussie.api\\controllers\\contactmessagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|c:\\users\\lenat\\desktop\\repos tutorat\\repos git\\repos-tutorat\\backend\\src\\etudereussie.api\\controllers\\campuspasserellecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|solutionrelative:src\\etudereussie.api\\controllers\\campuspasserellecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|c:\\users\\lenat\\desktop\\repos tutorat\\repos git\\repos-tutorat\\backend\\src\\etudereussie.api\\controllers\\admincampuspasserellecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|solutionrelative:src\\etudereussie.api\\controllers\\admincampuspasserellecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|c:\\users\\lenat\\desktop\\repos tutorat\\repos git\\repos-tutorat\\backend\\src\\etudereussie.api\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|solutionrelative:src\\etudereussie.api\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|c:\\users\\lenat\\desktop\\repos tutorat\\repos git\\repos-tutorat\\backend\\src\\etudereussie.api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|solutionrelative:src\\etudereussie.api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|c:\\users\\lenat\\desktop\\repos tutorat\\repos git\\repos-tutorat\\backend\\src\\etudereussie.api\\appsettings.production.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|solutionrelative:src\\etudereussie.api\\appsettings.production.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|c:\\users\\lenat\\desktop\\repos tutorat\\repos git\\repos-tutorat\\backend\\src\\etudereussie.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|solutionrelative:src\\etudereussie.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|c:\\users\\lenat\\desktop\\repos tutorat\\repos git\\repos-tutorat\\backend\\src\\etudereussie.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|solutionrelative:src\\etudereussie.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|c:\\users\\lenat\\desktop\\repos tutorat\\repos git\\repos-tutorat\\backend\\src\\etudereussie.api\\options\\adminaccessoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|solutionrelative:src\\etudereussie.api\\options\\adminaccessoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|c:\\users\\lenat\\desktop\\repos tutorat\\repos git\\repos-tutorat\\backend\\src\\etudereussie.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|solutionrelative:src\\etudereussie.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|c:\\users\\lenat\\desktop\\repos tutorat\\tutorat\\backend\\src\\etudereussie.api\\dtos\\createcontactmessagedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|c:\\users\\lenat\\desktop\\repos tutorat\\repos git\\repos-tutorat\\backend\\src\\etudereussie.api\\dtos\\createcontactmessagedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|solutionrelative:src\\etudereussie.api\\dtos\\createcontactmessagedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|c:\\users\\lenat\\desktop\\repos tutorat\\tutorat\\backend\\src\\etudereussie.api\\dtos\\createtutorapplicationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|c:\\users\\lenat\\desktop\\repos tutorat\\repos git\\repos-tutorat\\backend\\src\\etudereussie.api\\dtos\\createtutorapplicationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|solutionrelative:src\\etudereussie.api\\dtos\\createtutorapplicationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|c:\\users\\lenat\\desktop\\repos tutorat\\tutorat\\backend\\src\\etudereussie.api\\etudereussie.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|c:\\users\\lenat\\desktop\\repos tutorat\\repos git\\repos-tutorat\\backend\\src\\etudereussie.api\\etudereussie.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|solutionrelative:src\\etudereussie.api\\etudereussie.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|c:\\users\\lenat\\desktop\\repos tutorat\\tutorat\\backend\\src\\etudereussie.api\\app_data\\etude-reussie.db||{25834150-CD7E-11D0-92DF-00A0C9138C45}",
-      "RelativeMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|solutionrelative:src\\etudereussie.api\\app_data\\etude-reussie.db||{25834150-CD7E-11D0-92DF-00A0C9138C45}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|c:\\users\\lenat\\desktop\\repos tutorat\\tutorat\\backend\\src\\etudereussie.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|c:\\users\\lenat\\desktop\\repos tutorat\\repos git\\repos-tutorat\\backend\\src\\etudereussie.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|solutionrelative:src\\etudereussie.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
@@ -71,46 +79,97 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "C:\\Users\\lenat\\Desktop\\repos tutorat\\tutorat\\backend\\src\\EtudeReussie.Api\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "src\\EtudeReussie.Api\\Controllers\\AdminController.cs",
-              "ToolTip": "C:\\Users\\lenat\\Desktop\\repos tutorat\\tutorat\\backend\\src\\EtudeReussie.Api\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "src\\EtudeReussie.Api\\Controllers\\AdminController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAIAAAAAAAAAA==",
+              "Title": "TutorApplicationsController.cs",
+              "DocumentMoniker": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git\\Repos-tutorat\\backend\\src\\EtudeReussie.Api\\Controllers\\TutorApplicationsController.cs",
+              "RelativeDocumentMoniker": "src\\EtudeReussie.Api\\Controllers\\TutorApplicationsController.cs",
+              "ToolTip": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git\\Repos-tutorat\\backend\\src\\EtudeReussie.Api\\Controllers\\TutorApplicationsController.cs",
+              "RelativeToolTip": "src\\EtudeReussie.Api\\Controllers\\TutorApplicationsController.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAwwAkAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-28T02:01:18.273Z",
+              "WhenOpened": "2026-03-22T00:57:45.516Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ContactMessagesController.cs",
+              "DocumentMoniker": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git\\Repos-tutorat\\backend\\src\\EtudeReussie.Api\\Controllers\\ContactMessagesController.cs",
+              "RelativeDocumentMoniker": "src\\EtudeReussie.Api\\Controllers\\ContactMessagesController.cs",
+              "ToolTip": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git\\Repos-tutorat\\backend\\src\\EtudeReussie.Api\\Controllers\\ContactMessagesController.cs",
+              "RelativeToolTip": "src\\EtudeReussie.Api\\Controllers\\ContactMessagesController.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAowBIAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-22T02:10:49.811Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CampusPasserelleController.cs",
+              "DocumentMoniker": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git\\Repos-tutorat\\backend\\src\\EtudeReussie.Api\\Controllers\\CampusPasserelleController.cs",
+              "RelativeDocumentMoniker": "src\\EtudeReussie.Api\\Controllers\\CampusPasserelleController.cs",
+              "ToolTip": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git\\Repos-tutorat\\backend\\src\\EtudeReussie.Api\\Controllers\\CampusPasserelleController.cs",
+              "RelativeToolTip": "src\\EtudeReussie.Api\\Controllers\\CampusPasserelleController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T01:13:58.879Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git\\Repos-tutorat\\backend\\src\\EtudeReussie.Api\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "src\\EtudeReussie.Api\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git\\Repos-tutorat\\backend\\src\\EtudeReussie.Api\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "src\\EtudeReussie.Api\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAADwvyIAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-28T02:01:18.273Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AdminCampusPasserelleController.cs",
+              "DocumentMoniker": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git\\Repos-tutorat\\backend\\src\\EtudeReussie.Api\\Controllers\\AdminCampusPasserelleController.cs",
+              "RelativeDocumentMoniker": "src\\EtudeReussie.Api\\Controllers\\AdminCampusPasserelleController.cs",
+              "ToolTip": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git\\Repos-tutorat\\backend\\src\\EtudeReussie.Api\\Controllers\\AdminCampusPasserelleController.cs",
+              "RelativeToolTip": "src\\EtudeReussie.Api\\Controllers\\AdminCampusPasserelleController.cs",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAMwJgAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T02:24:01.847Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git\\Repos-tutorat\\backend\\src\\EtudeReussie.Api\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "src\\EtudeReussie.Api\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git\\Repos-tutorat\\backend\\src\\EtudeReussie.Api\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "src\\EtudeReussie.Api\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T20:54:28.27Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "appsettings.Production.json",
-              "DocumentMoniker": "C:\\Users\\lenat\\Desktop\\repos tutorat\\tutorat\\backend\\src\\EtudeReussie.Api\\appsettings.Production.json",
+              "DocumentMoniker": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git\\Repos-tutorat\\backend\\src\\EtudeReussie.Api\\appsettings.Production.json",
               "RelativeDocumentMoniker": "src\\EtudeReussie.Api\\appsettings.Production.json",
-              "ToolTip": "C:\\Users\\lenat\\Desktop\\repos tutorat\\tutorat\\backend\\src\\EtudeReussie.Api\\appsettings.Production.json",
+              "ToolTip": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git\\Repos-tutorat\\backend\\src\\EtudeReussie.Api\\appsettings.Production.json",
               "RelativeToolTip": "src\\EtudeReussie.Api\\appsettings.Production.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2026-03-22T18:27:51.602Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "etude-reussie.db",
-              "DocumentMoniker": "C:\\Users\\lenat\\Desktop\\repos tutorat\\tutorat\\backend\\src\\EtudeReussie.Api\\App_Data\\etude-reussie.db",
-              "RelativeDocumentMoniker": "src\\EtudeReussie.Api\\App_Data\\etude-reussie.db",
-              "ToolTip": "C:\\Users\\lenat\\Desktop\\repos tutorat\\tutorat\\backend\\src\\EtudeReussie.Api\\App_Data\\etude-reussie.db",
-              "RelativeToolTip": "src\\EtudeReussie.Api\\App_Data\\etude-reussie.db",
-              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAICSURBVDhPrZXNa9JhAIAfx6iZBM7EpWBTpzMdW6tZsA5F0K1T3QZBHwuCgsFYTiaYRFGE7NAH0aAoYtCl/8EOoRteNkhL13TiRqMlBFux\u002BfupXRL09Wfp6Dm9H8/7wHt5XxV/mPJ5M1C2VOaNUa3IJc6HQqEFcYdyuayqjKd8t8p37t6vFRQIBvyo1eofmz\u002B3zyhF28SFZrh8ZVS7X9MR9nq9g\u002BLeroIHjaaG0V0F\u002BUu0vVarZXV9g\u002BRyDrfDgtGgA0Cr1RIM\u002BKs1bXsbYaCTRsFf2zssflqmsFNgc2uLxFKadDaHw2ZmfGJS1AkG/NrKWPHK8VSGbxt5SqUingEXxaJMdvUrubV1Ua1DMTjosiPLMnaLGeshE05bN7Is0e9yiGodisF4Ko0kFYgnv7CUzrKYSCFJEu8jMVGtQzFo7NJjNOiRJInwh3mKsoxB38nw0BFRrUMx2KXXcXp4iAGXg469e3A7bZw9dZJMLsdNX4CFj3G\u002B5/PiMWgUrNBtNjFy4RzOHitPXrzm\u002BatZ\u002BnrtPHo2w8zLN6IO/wpW43b00Ndr58boJfpdh\u002Bl12EQFWgkmPieZj8WYfvyUSHSOSDQqKtBK8OrFEcauXyManWNyfIx7wduiAq0E9Qd0eI4d5d3bWU4c96DR7BMVaCXYLP89WPViT2RA1cQXoER55cHDaSvAb9pFqY18f9aRAAAAAElFTkSuQmCC",
-              "WhenOpened": "2026-03-22T02:33:14.931Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\lenat\\Desktop\\repos tutorat\\tutorat\\backend\\src\\EtudeReussie.Api\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git\\Repos-tutorat\\backend\\src\\EtudeReussie.Api\\Program.cs",
               "RelativeDocumentMoniker": "src\\EtudeReussie.Api\\Program.cs",
-              "ToolTip": "C:\\Users\\lenat\\Desktop\\repos tutorat\\tutorat\\backend\\src\\EtudeReussie.Api\\Program.cs",
+              "ToolTip": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git\\Repos-tutorat\\backend\\src\\EtudeReussie.Api\\Program.cs",
               "RelativeToolTip": "src\\EtudeReussie.Api\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -118,35 +177,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ContactMessagesController.cs",
-              "DocumentMoniker": "C:\\Users\\lenat\\Desktop\\repos tutorat\\tutorat\\backend\\src\\EtudeReussie.Api\\Controllers\\ContactMessagesController.cs",
-              "RelativeDocumentMoniker": "src\\EtudeReussie.Api\\Controllers\\ContactMessagesController.cs",
-              "ToolTip": "C:\\Users\\lenat\\Desktop\\repos tutorat\\tutorat\\backend\\src\\EtudeReussie.Api\\Controllers\\ContactMessagesController.cs",
-              "RelativeToolTip": "src\\EtudeReussie.Api\\Controllers\\ContactMessagesController.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAjwA4AAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-22T02:10:49.811Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\lenat\\Desktop\\repos tutorat\\tutorat\\backend\\src\\EtudeReussie.Api\\appsettings.json",
+              "DocumentMoniker": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git\\Repos-tutorat\\backend\\src\\EtudeReussie.Api\\appsettings.json",
               "RelativeDocumentMoniker": "src\\EtudeReussie.Api\\appsettings.json",
-              "ToolTip": "C:\\Users\\lenat\\Desktop\\repos tutorat\\tutorat\\backend\\src\\EtudeReussie.Api\\appsettings.json",
+              "ToolTip": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git\\Repos-tutorat\\backend\\src\\EtudeReussie.Api\\appsettings.json",
               "RelativeToolTip": "src\\EtudeReussie.Api\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2026-03-22T18:34:15.431Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "AdminAccessOptions.cs",
-              "DocumentMoniker": "C:\\Users\\lenat\\Desktop\\repos tutorat\\tutorat\\backend\\src\\EtudeReussie.Api\\Options\\AdminAccessOptions.cs",
+              "DocumentMoniker": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git\\Repos-tutorat\\backend\\src\\EtudeReussie.Api\\Options\\AdminAccessOptions.cs",
               "RelativeDocumentMoniker": "src\\EtudeReussie.Api\\Options\\AdminAccessOptions.cs",
-              "ToolTip": "C:\\Users\\lenat\\Desktop\\repos tutorat\\tutorat\\backend\\src\\EtudeReussie.Api\\Options\\AdminAccessOptions.cs",
+              "ToolTip": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git\\Repos-tutorat\\backend\\src\\EtudeReussie.Api\\Options\\AdminAccessOptions.cs",
               "RelativeToolTip": "src\\EtudeReussie.Api\\Options\\AdminAccessOptions.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAcAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -154,23 +201,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "TutorApplicationsController.cs",
-              "DocumentMoniker": "C:\\Users\\lenat\\Desktop\\repos tutorat\\tutorat\\backend\\src\\EtudeReussie.Api\\Controllers\\TutorApplicationsController.cs",
-              "RelativeDocumentMoniker": "src\\EtudeReussie.Api\\Controllers\\TutorApplicationsController.cs",
-              "ToolTip": "C:\\Users\\lenat\\Desktop\\repos tutorat\\tutorat\\backend\\src\\EtudeReussie.Api\\Controllers\\TutorApplicationsController.cs",
-              "RelativeToolTip": "src\\EtudeReussie.Api\\Controllers\\TutorApplicationsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-22T00:57:45.516Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "appsettings.Development.json",
-              "DocumentMoniker": "C:\\Users\\lenat\\Desktop\\repos tutorat\\tutorat\\backend\\src\\EtudeReussie.Api\\appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git\\Repos-tutorat\\backend\\src\\EtudeReussie.Api\\appsettings.Development.json",
               "RelativeDocumentMoniker": "src\\EtudeReussie.Api\\appsettings.Development.json",
-              "ToolTip": "C:\\Users\\lenat\\Desktop\\repos tutorat\\tutorat\\backend\\src\\EtudeReussie.Api\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git\\Repos-tutorat\\backend\\src\\EtudeReussie.Api\\appsettings.Development.json",
               "RelativeToolTip": "src\\EtudeReussie.Api\\appsettings.Development.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
@@ -178,11 +213,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "CreateTutorApplicationDto.cs",
-              "DocumentMoniker": "C:\\Users\\lenat\\Desktop\\repos tutorat\\tutorat\\backend\\src\\EtudeReussie.Api\\Dtos\\CreateTutorApplicationDto.cs",
+              "DocumentMoniker": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git\\Repos-tutorat\\backend\\src\\EtudeReussie.Api\\Dtos\\CreateTutorApplicationDto.cs",
               "RelativeDocumentMoniker": "src\\EtudeReussie.Api\\Dtos\\CreateTutorApplicationDto.cs",
-              "ToolTip": "C:\\Users\\lenat\\Desktop\\repos tutorat\\tutorat\\backend\\src\\EtudeReussie.Api\\Dtos\\CreateTutorApplicationDto.cs",
+              "ToolTip": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git\\Repos-tutorat\\backend\\src\\EtudeReussie.Api\\Dtos\\CreateTutorApplicationDto.cs",
               "RelativeToolTip": "src\\EtudeReussie.Api\\Dtos\\CreateTutorApplicationDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -190,11 +225,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "CreateContactMessageDto.cs",
-              "DocumentMoniker": "C:\\Users\\lenat\\Desktop\\repos tutorat\\tutorat\\backend\\src\\EtudeReussie.Api\\Dtos\\CreateContactMessageDto.cs",
+              "DocumentMoniker": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git\\Repos-tutorat\\backend\\src\\EtudeReussie.Api\\Dtos\\CreateContactMessageDto.cs",
               "RelativeDocumentMoniker": "src\\EtudeReussie.Api\\Dtos\\CreateContactMessageDto.cs",
-              "ToolTip": "C:\\Users\\lenat\\Desktop\\repos tutorat\\tutorat\\backend\\src\\EtudeReussie.Api\\Dtos\\CreateContactMessageDto.cs",
+              "ToolTip": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git\\Repos-tutorat\\backend\\src\\EtudeReussie.Api\\Dtos\\CreateContactMessageDto.cs",
               "RelativeToolTip": "src\\EtudeReussie.Api\\Dtos\\CreateContactMessageDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -202,11 +237,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "EtudeReussie.Api.csproj",
-              "DocumentMoniker": "C:\\Users\\lenat\\Desktop\\repos tutorat\\tutorat\\backend\\src\\EtudeReussie.Api\\EtudeReussie.Api.csproj",
+              "DocumentMoniker": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git\\Repos-tutorat\\backend\\src\\EtudeReussie.Api\\EtudeReussie.Api.csproj",
               "RelativeDocumentMoniker": "src\\EtudeReussie.Api\\EtudeReussie.Api.csproj",
-              "ToolTip": "C:\\Users\\lenat\\Desktop\\repos tutorat\\tutorat\\backend\\src\\EtudeReussie.Api\\EtudeReussie.Api.csproj",
+              "ToolTip": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git\\Repos-tutorat\\backend\\src\\EtudeReussie.Api\\EtudeReussie.Api.csproj",
               "RelativeToolTip": "src\\EtudeReussie.Api\\EtudeReussie.Api.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAEwBIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
@@ -214,11 +249,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\lenat\\Desktop\\repos tutorat\\tutorat\\backend\\src\\EtudeReussie.Api\\Properties\\launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git\\Repos-tutorat\\backend\\src\\EtudeReussie.Api\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "src\\EtudeReussie.Api\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\lenat\\Desktop\\repos tutorat\\tutorat\\backend\\src\\EtudeReussie.Api\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git\\Repos-tutorat\\backend\\src\\EtudeReussie.Api\\Properties\\launchSettings.json",
               "RelativeToolTip": "src\\EtudeReussie.Api\\Properties\\launchSettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",

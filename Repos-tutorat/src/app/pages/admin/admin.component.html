@@ -40,7 +40,7 @@
             </thead>
             <tbody>
               <tr *ngFor="let item of dashboard.tutorRequests; trackBy: trackById">
-                <td>{{ item.createdAtUtc | date: 'dd/MM/yyyy HH:mm' }}</td>
+                <td>{{ item.createdAtUtc | date:'dd/MM/yyyy HH:mm':'America/Toronto' }}</td>
                 <td>{{ item.firstName }} {{ item.lastName }}</td>
                 <td>{{ item.classLevel }}</td>
                 <td>{{ item.subject || '—' }}</td>
@@ -84,7 +84,7 @@
             </thead>
             <tbody>
               <tr *ngFor="let item of dashboard.tutorApplications; trackBy: trackById">
-                <td>{{ item.createdAtUtc | date: 'dd/MM/yyyy HH:mm' }}</td>
+                <td>{{ item.createdAtUtc | date:'dd/MM/yyyy HH:mm':'America/Toronto' }}</td>
                 <td>{{ item.fullName }}</td>
                 <td>{{ item.subjects }}</td>
                 <td>{{ item.coveredLevels || '—' }}</td>
@@ -127,7 +127,7 @@
             </thead>
             <tbody>
               <tr *ngFor="let item of dashboard.contactMessages; trackBy: trackById">
-                <td>{{ item.createdAtUtc | date: 'dd/MM/yyyy HH:mm' }}</td>
+                <td>{{ item.createdAtUtc | date:'dd/MM/yyyy HH:mm':'America/Toronto' }}</td>
                 <td>{{ item.fullName }}</td>
                 <td>{{ item.email }}</td>
                 <td>{{ item.phone || '—' }}</td>

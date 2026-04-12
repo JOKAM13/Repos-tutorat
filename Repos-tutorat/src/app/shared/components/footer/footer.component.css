@@ -42,3 +42,40 @@
     grid-template-columns: 1fr;
   }
 }
+
+.footer-socials {
+  margin-top: 1rem;
+}
+
+.footer-socials strong {
+  display: block;
+  margin-bottom: 0.8rem;
+  color: white;
+}
+
+.footer-socials-row {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.footer-socials-row a {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  font-weight: 800;
+  font-size: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.08);
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+.footer-socials-row a:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.16);
+}

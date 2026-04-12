@@ -1,0 +1,372 @@
+<section class="campus-page">
+  <section class="campus-hero section">
+    <div class="container campus-hero-inner">
+      <div class="section-title center-title campus-title-block">
+        <span class="eyebrow">Programme Campus Passerelle</span>
+        <h1>Prépare ton arrivée et ta <span class="campus-gradient">réussite académique</span> au Canada</h1>
+        <p>
+          Campus Passerelle aide les nouveaux étudiants à comprendre leur filière, les étapes de préparation et les
+          bases à maîtriser avant la rentrée. Un accompagnement simple, clair et structuré pour partir du bon pied.
+        </p>
+      </div>
+
+      <div class="campus-stats card">
+        <div>
+          <strong>{{ filieres.length }}+</strong>
+          <span>Filières couvertes</span>
+        </div>
+        <div>
+          <strong>100%</strong>
+          <span>Contenu évolutif</span>
+        </div>
+        <div>
+          <strong>Dès aujourd'hui</strong>
+          <span>Commencer à se préparer</span>
+        </div>
+        <div>
+          <strong>Canada</strong>
+          <span>Adapté au système</span>
+        </div>
+      </div>
+    </div>
+  </section>
+<section class="section-tight">
+  <div class="container">
+    <div class="campus-journey-visual card">
+      <img
+        src="assets/images/campus-passerelle-route.png"
+        alt="Étude Réussie facilite le parcours des étudiants internationaux vers le Canada"
+      />
+    </div>
+  </div>
+</section>
+
+  <section class="section campus-selector-section">
+    <div class="container campus-selector-wrap card">
+      <div class="section-title center-title selector-title">
+        <h2>Choisis ta filière</h2>
+        <p>Sélectionne ton programme pour voir ta fiche de préparation personnalisée.</p>
+      </div>
+
+      <div class="campus-feedback loading" *ngIf="loadingFilieres">Chargement des filières...</div>
+      <div class="campus-feedback error" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+      <div class="selector-control" *ngIf="filieres.length; else noFiliereState">
+        <select
+          [(ngModel)]="selectedFiliereId"
+          (ngModelChange)="selectFiliere($event)"
+          aria-label="Choisir une filière">
+          <option *ngFor="let filiere of filieres; trackBy: trackById" [value]="filiere.id">{{ filiere.nom }}</option>
+        </select>
+      </div>
+
+      <div class="chips-wrap" *ngIf="filieres.length">
+        <button
+          type="button"
+          class="chip-btn"
+          *ngFor="let filiere of filieres; trackBy: trackById"
+          [class.active]="filiere.id === selectedFiliereId"
+          [style.--chip-color]="filiere.couleur"
+          (click)="selectFiliere(filiere.id)">
+          {{ filiere.nom }}
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight" *ngIf="selectedFiliere as filiere">
+    <div class="container grid grid-2 campus-detail-grid">
+      <article class="card campus-profile" [style.--filiere-color]="filiere.couleur">
+        <div class="campus-profile-head">
+          <div>
+            <span class="badge">{{ filiere.niveau }}</span>
+            <h2>{{ filiere.nom }}</h2>
+            <p class="muted">{{ filiere.description }}</p>
+          </div>
+          <span class="profile-dot"></span>
+        </div>
+
+        <div class="campus-block">
+          <h3>Notions de base</h3>
+          <ul>
+            <li *ngFor="let item of filiere.notions">{{ item }}</li>
+          </ul>
+        </div>
+
+        <div class="campus-block">
+          <h3>Outils utiles</h3>
+          <div class="tag-list">
+            <span class="soft-tag" *ngFor="let item of filiere.outils">{{ item }}</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="card campus-side-panel">
+        <div class="campus-block">
+          <h3>Conseils pour bien commencer</h3>
+          <ol class="tips-list">
+            <li *ngFor="let item of filiere.conseils; let i = index">
+              <span>{{ i + 1 }}</span>
+              <div>{{ item }}</div>
+            </li>
+          </ol>
+        </div>
+
+        <div class="campus-block">
+          <h3>Ressources utiles</h3>
+          <div class="resource-list">
+            <article class="resource-card" *ngFor="let item of filiere.ressources; trackBy: trackById">
+              <strong>{{ item.titre }}</strong>
+              <p class="muted">{{ item.description || 'Ressource ajoutée par l’administration.' }}</p>
+              <a *ngIf="item.lien" [href]="item.lien" target="_blank" rel="noreferrer">Ouvrir la ressource</a>
+            </article>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-tight" *ngIf="selectedFiliere as filiere">
+    <div class="container">
+      <article class="card courses-panel">
+        <div class="section-title center-title selector-title">
+          <h2>Préparations recommandées</h2>
+          <p>Voici les cours associés à la filière <strong>{{ filiere.nom }}</strong>.</p>
+        </div>
+
+        <div class="campus-feedback loading compact" *ngIf="loadingDetails">Chargement des cours...</div>
+
+        <div class="grid grid-2" *ngIf="selectedCours.length; else noCoursState">
+          <article class="course-card" *ngFor="let cours of selectedCours; trackBy: trackById">
+            <div class="course-top">
+              <span class="badge">{{ cours.niveau }}</span>
+              <span class="muted">{{ cours.categorie }}</span>
+            </div>
+            <h3>{{ cours.nom }}</h3>
+            <p class="muted">{{ cours.description }}</p>
+
+            <div class="course-meta">
+              <strong>Durée estimée</strong>
+              <span>{{ cours.dureeEstimee || 'À définir' }}</span>
+            </div>
+
+            <div class="campus-block small-gap">
+              <h4>Objectifs</h4>
+              <ul>
+                <li *ngFor="let item of cours.objectifs">{{ item }}</li>
+              </ul>
+            </div>
+
+            <div class="campus-block small-gap" *ngIf="cours.ressources.length">
+              <h4>Ressources</h4>
+              <ul>
+                <li *ngFor="let item of cours.ressources">
+                  <strong>{{ item.titre }}</strong>
+                  <span *ngIf="item.description"> — {{ item.description }}</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </article>
+    </div>
+  </section>
+<section class="section">
+  <div class="container">
+    <div class="section-title center-title">
+      <span class="eyebrow">Pourquoi ce programme ?</span>
+      <h2>Un programme conçu pour les étudiants qui veulent partir gagnants</h2>
+      <p>
+        Trop d’étudiants arrivent en première session sans avoir les repères nécessaires.
+        Campus Passerelle change ça.
+      </p>
+    </div>
+
+    <div class="grid grid-4 campus-feature-cards">
+      <article class="card campus-info-card">
+        <div class="campus-info-icon">📚</div>
+        <h3>Comprendre sa filière en profondeur</h3>
+        <p>
+          Avant même de commencer, sache exactement ce que ton programme exige,
+          comment il fonctionne et ce qu’on attend de toi dès la première semaine.
+        </p>
+      </article>
+
+      <article class="card campus-info-card">
+        <div class="campus-info-icon">📝</div>
+        <h3>Savoir quoi préparer avant la rentrée</h3>
+        <p>
+          Identifie les notions clés, les outils à maîtriser et les ressources à explorer
+          pour ne pas arriver les mains vides le premier jour.
+        </p>
+      </article>
+
+      <article class="card campus-info-card">
+        <div class="campus-info-icon">✨</div>
+        <h3>Démarrer avec confiance</h3>
+        <p>
+          Un étudiant bien préparé est un étudiant plus serein.
+          Campus Passerelle te donne le cadre pour aborder ta première session sans stress inutile.
+        </p>
+      </article>
+
+      <article class="card campus-info-card">
+        <div class="campus-info-icon">🛡️</div>
+        <h3>Un programme structuré et fiable</h3>
+        <p>
+          Nos contenus sont pensés pour le système académique canadien,
+          adaptés à chaque filière et conçus pour t’aider à mieux démarrer.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title center-title">
+      <span class="eyebrow">À qui s’adresse le programme ?</span>
+      <h2>Campus Passerelle est fait pour toi si...</h2>
+    </div>
+
+    <div class="grid grid-3 campus-target-cards">
+      <article class="card campus-info-card large">
+        <div class="campus-info-icon soft-green">🌍</div>
+        <h3>Étudiants internationaux</h3>
+        <p>
+          Tu arrives d’un autre pays et tu veux t’intégrer rapidement au système universitaire canadien ?
+          Campus Passerelle est conçu pour toi.
+        </p>
+      </article>
+
+      <article class="card campus-info-card large">
+        <div class="campus-info-icon soft-green">🎓</div>
+        <h3>Nouveaux admis à l’université</h3>
+        <p>
+          Tu viens d’obtenir ton admission et tu ne sais pas par où commencer ?
+          Nous t’aidons à structurer ta préparation avant la rentrée.
+        </p>
+      </article>
+
+      <article class="card campus-info-card large">
+        <div class="campus-info-icon soft-green">🎯</div>
+        <h3>Étudiants qui veulent mieux performer</h3>
+        <p>
+          Tu es déjà inscrit mais tu veux maximiser tes chances de réussite dès le départ ?
+          Ce programme est fait pour toi aussi.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section campus-dark-section">
+  <div class="container">
+    <div class="section-title center-title campus-dark-title">
+      <span class="eyebrow dark-eyebrow">Ce que tu vas obtenir</span>
+      <h2>Tout ce dont tu as besoin pour commencer du bon pied</h2>
+      <p>
+        En sélectionnant ta filière, tu accèdes à une fiche de préparation complète et personnalisée.
+      </p>
+    </div>
+
+    <div class="grid grid-3 campus-benefit-grid">
+      <article class="campus-benefit-item">
+        <span class="campus-benefit-icon">📖</span>
+        <strong>Une vue claire et complète de ta filière</strong>
+      </article>
+
+      <article class="campus-benefit-item">
+        <span class="campus-benefit-icon">📚</span>
+        <strong>Les notions fondamentales à maîtriser avant de commencer</strong>
+      </article>
+
+      <article class="campus-benefit-item">
+        <span class="campus-benefit-icon">🛠️</span>
+        <strong>Les outils et logiciels incontournables dans ton domaine</strong>
+      </article>
+
+      <article class="campus-benefit-item">
+        <span class="campus-benefit-icon">⭐</span>
+        <strong>Des conseils pratiques pour bien démarrer</strong>
+      </article>
+
+      <article class="campus-benefit-item">
+        <span class="campus-benefit-icon">📍</span>
+        <strong>Des ressources et plateformes recommandées</strong>
+      </article>
+
+      <article class="campus-benefit-item">
+        <span class="campus-benefit-icon">✅</span>
+        <strong>Une orientation structurée avant la rentrée</strong>
+      </article>
+    </div>
+  </div>
+</section>
+
+<a class="floating-support-btn" href="/#contact" aria-label="Nous contacter">
+  <span class="floating-support-icon">💬</span>
+  <span class="floating-support-text">Nous contacter</span>
+</a>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title center-title">
+      <span class="eyebrow">Questions fréquentes</span>
+      <h2>Tout ce que tu dois savoir</h2>
+      <p>Des réponses claires aux questions qu’on nous pose le plus souvent.</p>
+    </div>
+
+    <div class="campus-faq-list">
+      <details class="campus-faq-item" open>
+        <summary>Campus Passerelle s’adresse à qui ?</summary>
+        <p>
+          À tout étudiant qui débute ou qui s’apprête à débuter des études postsecondaires au Canada.
+          Que tu arrives d’un autre pays ou d’une autre province, ce programme te donnera les repères nécessaires
+          pour partir sur de bonnes bases.
+        </p>
+      </details>
+
+      <details class="campus-faq-item">
+        <summary>Le programme est-il réservé aux étudiants internationaux ?</summary>
+        <p>
+          Non. Il est utile autant pour les étudiants internationaux que pour les nouveaux admis
+          ou les étudiants qui veulent mieux se préparer avant la rentrée.
+        </p>
+      </details>
+
+      <details class="campus-faq-item">
+        <summary>Comment choisir ma filière dans le programme ?</summary>
+        <p>
+          Il te suffit de sélectionner ton programme d’études dans le menu déroulant sur cette page.
+          La fiche de préparation correspondante s’affiche automatiquement avec le contenu personnalisé pour ta filière.
+        </p>
+      </details>
+
+      <details class="campus-faq-item">
+        <summary>Est-ce que je peux bénéficier d’un accompagnement personnalisé ?</summary>
+        <p>
+          Oui. En plus du contenu disponible sur cette page, notre équipe propose un accompagnement individuel.
+          Contacte-nous pour en savoir plus et discuter de ta situation.
+        </p>
+      </details>
+
+      <details class="campus-faq-item">
+        <summary>Quand faut-il commencer la préparation ?</summary>
+        <p>
+          Idéalement, 2 à 3 mois avant la rentrée. Mais il n’est jamais trop tard pour bien se préparer.
+          Même quelques semaines de travail ciblé peuvent faire une vraie différence sur la première session.
+        </p>
+      </details>
+    </div>
+  </div>
+
+
+  <ng-template #noFiliereState>
+    <div class="empty-campus-state">Aucune filière active pour le moment.</div>
+  </ng-template>
+
+  <ng-template #noCoursState>
+    <div class="empty-campus-state">Aucun cours n’est encore assigné à cette filière.</div>
+  </ng-template>
+</section>

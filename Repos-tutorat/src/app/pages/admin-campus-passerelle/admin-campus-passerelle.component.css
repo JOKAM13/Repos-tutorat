@@ -1,0 +1,320 @@
+.admin-campus-page {
+  padding: 2rem 0 4rem;
+  background:
+    radial-gradient(circle at top left, rgba(41, 110, 255, 0.14), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(16, 185, 129, 0.14), transparent 28%),
+    #f5f8ff;
+}
+
+.admin-campus-shell {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.admin-campus-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.admin-campus-header h1 {
+  margin: 0.5rem 0;
+}
+
+.admin-campus-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.tab-switcher {
+  display: inline-flex;
+  gap: 0.35rem;
+  padding: 0.4rem;
+  width: fit-content;
+}
+
+.tab-switcher button {
+  min-width: 140px;
+  border: 0;
+  background: transparent;
+  padding: 0.9rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 700;
+  color: #56637d;
+}
+
+.tab-switcher button.active {
+  background: white;
+  color: var(--navy);
+  box-shadow: 0 8px 22px rgba(15, 42, 88, 0.12);
+}
+
+.admin-grid {
+  align-items: start;
+}
+
+.admin-form-card,
+.admin-list-card,
+.assignation-card {
+  padding: 1.5rem;
+}
+
+.panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.panel-head h2,
+.entity-card h3,
+.assign-column h3 {
+  margin: 0;
+  color: var(--navy);
+}
+
+.admin-form-layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.admin-form-layout textarea {
+  min-height: 120px;
+}
+
+.check-field {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.checkbox-inline {
+  display: inline-flex;
+  gap: 0.7rem;
+  align-items: center;
+  min-height: 52px;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fff;
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.entity-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.entity-card {
+  padding: 1.2rem;
+  border-radius: 22px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.entity-card-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.meta-line,
+.meta-summary,
+.inline-actions {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.meta-line {
+  margin-top: 0.55rem;
+}
+
+.meta-summary {
+  margin-top: 1rem;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.entity-description {
+  margin: 0.85rem 0 0;
+}
+
+.mini-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  background: #f4f6fb;
+  color: var(--navy);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.mini-badge.success {
+  background: rgba(16, 185, 129, 0.12);
+  color: #0a8d62;
+}
+
+.mini-badge.info {
+  background: rgba(45, 108, 223, 0.1);
+  color: #1e59bf;
+}
+
+.mini-badge.muted-badge {
+  background: rgba(111, 119, 135, 0.12);
+  color: #667085;
+}
+
+.icon-btn {
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 14px;
+  min-width: 42px;
+  height: 42px;
+  cursor: pointer;
+}
+
+.icon-btn.danger {
+  color: #b42318;
+  background: #fff5f4;
+}
+
+.assign-select-field {
+  max-width: 480px;
+}
+
+.assign-select-field select {
+  width: 100%;
+  min-height: 52px;
+  padding: 0 1rem;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+}
+
+.assign-grid {
+  margin-top: 1.5rem;
+}
+
+.card-soft {
+  padding: 1.2rem;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid var(--line);
+}
+
+.assign-list {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.assign-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.95rem 1rem;
+  border-radius: 18px;
+  background: #f8fbff;
+  border: 1px solid #ebf0f7;
+}
+
+.assign-item.assigned {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: rgba(16, 185, 129, 0.18);
+}
+
+.assign-item p {
+  margin: 0.25rem 0 0;
+}
+
+.small-btn {
+  min-height: 40px;
+  padding: 0 0.85rem;
+}
+
+.status {
+  padding: 0.95rem 1rem;
+  border-radius: 16px;
+  font-weight: 600;
+}
+
+.success {
+  background: rgba(34, 160, 100, 0.1);
+  color: #156d43;
+  border: 1px solid rgba(34, 160, 100, 0.16);
+}
+
+.error-state {
+  background: rgba(180, 35, 24, 0.08);
+  color: #8a1c13;
+  border: 1px solid rgba(180, 35, 24, 0.12);
+}
+
+.empty-state {
+  padding: 1rem;
+  border: 1px dashed #c9d3ea;
+  border-radius: 16px;
+  color: #64748b;
+  background: #fbfdff;
+}
+
+.empty-state.compact {
+  padding: 0.9rem;
+}
+
+.login-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(12, 22, 46, 0.62);
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  z-index: 30;
+}
+
+.login-card {
+  width: min(100%, 460px);
+  padding: 2rem;
+}
+
+.login-card h2 {
+  margin: 0.3rem 0 0.5rem;
+}
+
+.login-form {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.full-width {
+  width: 100%;
+}
+
+@media (max-width: 960px) {
+  .admin-campus-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .admin-form-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .field-span-2 {
+    grid-column: span 1;
+  }
+}

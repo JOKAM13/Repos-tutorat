@@ -8,6 +8,9 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
     public DbSet<TutorRequest> TutorRequests => Set<TutorRequest>();
     public DbSet<TutorApplication> TutorApplications => Set<TutorApplication>();
     public DbSet<ContactMessage> ContactMessages => Set<ContactMessage>();
+    public DbSet<CampusFiliere> CampusFilieres => Set<CampusFiliere>();
+    public DbSet<CampusCours> CampusCours => Set<CampusCours>();
+    public DbSet<CampusFiliereCours> CampusFiliereCours => Set<CampusFiliereCours>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -55,6 +58,52 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
             entity.Property(item => item.Phone).HasMaxLength(40);
             entity.Property(item => item.Message).HasMaxLength(4000).IsRequired();
             entity.Property(item => item.CreatedAtUtc).IsRequired();
+        });
+
+        modelBuilder.Entity<CampusFiliere>(entity =>
+        {
+            entity.ToTable("CampusFilieres");
+            entity.HasKey(item => item.Id);
+            entity.Property(item => item.Nom).HasMaxLength(180).IsRequired();
+            entity.Property(item => item.Niveau).HasMaxLength(80).IsRequired();
+            entity.Property(item => item.Description).HasMaxLength(4000).IsRequired();
+            entity.Property(item => item.NotionsJson).HasColumnType("TEXT").IsRequired();
+            entity.Property(item => item.OutilsJson).HasColumnType("TEXT").IsRequired();
+            entity.Property(item => item.ConseilsJson).HasColumnType("TEXT").IsRequired();
+            entity.Property(item => item.RessourcesJson).HasColumnType("TEXT").IsRequired();
+            entity.Property(item => item.Couleur).HasMaxLength(30).IsRequired();
+            entity.Property(item => item.Actif).IsRequired();
+            entity.Property(item => item.CreatedAtUtc).IsRequired();
+        });
+
+        modelBuilder.Entity<CampusCours>(entity =>
+        {
+            entity.ToTable("CampusCours");
+            entity.HasKey(item => item.Id);
+            entity.Property(item => item.Nom).HasMaxLength(180).IsRequired();
+            entity.Property(item => item.Categorie).HasMaxLength(120).IsRequired();
+            entity.Property(item => item.Niveau).HasMaxLength(80).IsRequired();
+            entity.Property(item => item.Description).HasMaxLength(4000).IsRequired();
+            entity.Property(item => item.ObjectifsJson).HasColumnType("TEXT").IsRequired();
+            entity.Property(item => item.RessourcesJson).HasColumnType("TEXT").IsRequired();
+            entity.Property(item => item.DureeEstimee).HasMaxLength(120).IsRequired();
+            entity.Property(item => item.CreatedAtUtc).IsRequired();
+        });
+
+        modelBuilder.Entity<CampusFiliereCours>(entity =>
+        {
+            entity.ToTable("CampusFiliereCours");
+            entity.HasKey(item => new { item.FiliereId, item.CoursId });
+
+            entity.HasOne(item => item.Filiere)
+                .WithMany(item => item.CampusFiliereCours)
+                .HasForeignKey(item => item.FiliereId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            entity.HasOne(item => item.Cours)
+                .WithMany(item => item.CampusFiliereCours)
+                .HasForeignKey(item => item.CoursId)
+                .OnDelete(DeleteBehavior.Cascade);
         });
     }
 }

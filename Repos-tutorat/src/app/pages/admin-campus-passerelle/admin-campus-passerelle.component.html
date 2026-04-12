@@ -1,0 +1,325 @@
+<section class="admin-campus-page">
+  <div class="container admin-campus-shell">
+    <div class="admin-campus-header card">
+      <div>
+        <span class="eyebrow">Campus Passerelle</span>
+        <h1>Administration – Campus Passerelle</h1>
+        <p class="muted">Gère les filières, les cours et les assignations directement depuis la base de données.</p>
+      </div>
+
+      <div class="admin-campus-actions" *ngIf="authenticated">
+        <button type="button" class="btn btn-light" (click)="loadDashboard()" [disabled]="loadingDashboard">
+          {{ loadingDashboard ? 'Actualisation...' : 'Actualiser' }}
+        </button>
+        <button type="button" class="btn btn-primary" (click)="logout()">Déconnexion</button>
+      </div>
+    </div>
+
+    <div class="status error-state" *ngIf="dashboardError">{{ dashboardError }}</div>
+    <div class="status success" *ngIf="actionMessage">{{ actionMessage }}</div>
+
+    <ng-container *ngIf="authenticated">
+      <div class="tab-switcher card">
+        <button type="button" [class.active]="activeTab === 'filieres'" (click)="setTab('filieres')">
+          Filières ({{ filieres.length }})
+        </button>
+        <button type="button" [class.active]="activeTab === 'cours'" (click)="setTab('cours')">
+          Cours ({{ cours.length }})
+        </button>
+        <button type="button" [class.active]="activeTab === 'assignations'" (click)="setTab('assignations')">
+          Assignations
+        </button>
+      </div>
+
+      <section *ngIf="activeTab === 'filieres'" class="grid grid-2 admin-grid">
+        <article class="card admin-form-card">
+          <div class="panel-head">
+            <h2>{{ editingFiliereId ? 'Modifier une filière' : 'Nouvelle filière' }}</h2>
+          </div>
+
+          <form [formGroup]="filiereForm" (ngSubmit)="submitFiliere()" class="admin-form-layout">
+            <div class="field">
+              <label>Nom</label>
+              <input type="text" formControlName="nom" placeholder="Informatique" />
+            </div>
+
+            <div class="field">
+              <label>Niveau</label>
+              <select formControlName="niveau">
+                <option *ngFor="let level of filiereLevels" [value]="level">{{ level }}</option>
+              </select>
+            </div>
+
+            <div class="field field-span-2">
+              <label>Description</label>
+              <textarea formControlName="description" placeholder="Description de la filière"></textarea>
+            </div>
+
+            <div class="field">
+              <label>Couleur</label>
+              <input type="color" formControlName="couleur" />
+            </div>
+
+            <div class="field check-field">
+              <label>Statut</label>
+              <label class="checkbox-inline">
+                <input type="checkbox" formControlName="actif" />
+                <span>Filière active</span>
+              </label>
+            </div>
+
+            <div class="field field-span-2">
+              <label>Notions (une ligne = une notion)</label>
+              <textarea formControlName="notionsText" placeholder="Algorithmique&#10;Variables&#10;Boucles"></textarea>
+            </div>
+
+            <div class="field field-span-2">
+              <label>Outils (une ligne = un outil)</label>
+              <textarea formControlName="outilsText" placeholder="Visual Studio Code&#10;Git&#10;GitHub"></textarea>
+            </div>
+
+            <div class="field field-span-2">
+              <label>Conseils (une ligne = un conseil)</label>
+              <textarea formControlName="conseilsText" placeholder="Commencer tôt&#10;Pratiquer chaque semaine"></textarea>
+            </div>
+
+            <div class="field field-span-2">
+              <label>Ressources</label>
+              <textarea
+                formControlName="ressourcesText"
+                placeholder="Titre | Description | Lien optionnel&#10;Guide de base | Pour bien démarrer | https://..."></textarea>
+            </div>
+
+            <div class="form-actions field-span-2">
+              <button type="submit" class="btn btn-secondary" [disabled]="loadingAction">
+                {{ editingFiliereId ? 'Enregistrer' : 'Créer la filière' }}
+              </button>
+              <button type="button" class="btn btn-light" (click)="cancelFiliereEdit()" [disabled]="loadingAction">
+                Annuler
+              </button>
+            </div>
+          </form>
+        </article>
+
+        <article class="card admin-list-card">
+          <div class="panel-head">
+            <h2>Gestion des filières</h2>
+          </div>
+
+          <div class="entity-list" *ngIf="filieres.length; else noFilieres">
+            <article class="entity-card" *ngFor="let item of filieres; trackBy: trackById">
+              <div class="entity-card-top">
+                <div>
+                  <h3>{{ item.nom }}</h3>
+                  <div class="meta-line">
+                    <span class="mini-badge">{{ item.niveau }}</span>
+                    <span class="mini-badge success" *ngIf="item.actif">Actif</span>
+                    <span class="mini-badge muted-badge" *ngIf="!item.actif">Inactif</span>
+                  </div>
+                </div>
+
+                <div class="inline-actions">
+                  <button type="button" class="icon-btn" (click)="editFiliere(item)">✏️</button>
+                  <button type="button" class="icon-btn danger" (click)="deleteFiliere(item)">🗑️</button>
+                </div>
+              </div>
+
+              <p class="muted entity-description">{{ item.description }}</p>
+              <div class="meta-summary">
+                <span>{{ item.notions.length }} notions</span>
+                <span>{{ item.outils.length }} outils</span>
+                <span>{{ item.conseils.length }} conseils</span>
+                <span>{{ item.coursIds.length }} cours assignés</span>
+              </div>
+            </article>
+          </div>
+        </article>
+      </section>
+
+      <section *ngIf="activeTab === 'cours'" class="grid grid-2 admin-grid">
+        <article class="card admin-form-card">
+          <div class="panel-head">
+            <h2>{{ editingCoursId ? 'Modifier un cours' : 'Nouveau cours' }}</h2>
+          </div>
+
+          <form [formGroup]="coursForm" (ngSubmit)="submitCours()" class="admin-form-layout">
+            <div class="field">
+              <label>Nom</label>
+              <input type="text" formControlName="nom" placeholder="Programmation - bases" />
+            </div>
+
+            <div class="field">
+              <label>Catégorie</label>
+              <input type="text" formControlName="categorie" placeholder="Préparation académique" />
+            </div>
+
+            <div class="field">
+              <label>Niveau</label>
+              <select formControlName="niveau">
+                <option *ngFor="let level of coursLevels" [value]="level">{{ level }}</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label>Durée estimée</label>
+              <input type="text" formControlName="dureeEstimee" placeholder="4 à 6 heures" />
+            </div>
+
+            <div class="field field-span-2">
+              <label>Description</label>
+              <textarea formControlName="description" placeholder="Description du cours"></textarea>
+            </div>
+
+            <div class="field field-span-2">
+              <label>Objectifs (une ligne = un objectif)</label>
+              <textarea formControlName="objectifsText" placeholder="Comprendre les variables&#10;Utiliser des conditions"></textarea>
+            </div>
+
+            <div class="field field-span-2">
+              <label>Ressources</label>
+              <textarea
+                formControlName="ressourcesText"
+                placeholder="Titre | Description | Lien optionnel&#10;Fiche pratique | Ressource d'introduction"></textarea>
+            </div>
+
+            <div class="form-actions field-span-2">
+              <button type="submit" class="btn btn-secondary" [disabled]="loadingAction">
+                {{ editingCoursId ? 'Enregistrer' : 'Créer le cours' }}
+              </button>
+              <button type="button" class="btn btn-light" (click)="cancelCoursEdit()" [disabled]="loadingAction">
+                Annuler
+              </button>
+            </div>
+          </form>
+        </article>
+
+        <article class="card admin-list-card">
+          <div class="panel-head">
+            <h2>Gestion des cours</h2>
+          </div>
+
+          <div class="entity-list" *ngIf="cours.length; else noCours">
+            <article class="entity-card" *ngFor="let item of cours; trackBy: trackById">
+              <div class="entity-card-top">
+                <div>
+                  <h3>{{ item.nom }}</h3>
+                  <div class="meta-line">
+                    <span class="mini-badge">{{ item.categorie }}</span>
+                    <span class="mini-badge info">{{ item.niveau }}</span>
+                  </div>
+                </div>
+
+                <div class="inline-actions">
+                  <button type="button" class="icon-btn" (click)="editCours(item)">✏️</button>
+                  <button type="button" class="icon-btn danger" (click)="deleteCours(item)">🗑️</button>
+                </div>
+              </div>
+
+              <p class="muted entity-description">{{ item.description }}</p>
+              <div class="meta-summary">
+                <span>{{ item.objectifs.length }} objectifs</span>
+                <span>{{ item.ressources.length }} ressources</span>
+                <span>{{ item.dureeEstimee || 'Durée non définie' }}</span>
+              </div>
+            </article>
+          </div>
+        </article>
+      </section>
+
+      <section *ngIf="activeTab === 'assignations'" class="assignation-section">
+        <article class="card assignation-card">
+          <div class="panel-head">
+            <h2>Assigner des cours aux filières</h2>
+          </div>
+
+          <div class="field assign-select-field">
+            <label>Sélectionner une filière</label>
+            <select [(ngModel)]="selectedAssignationFiliereId">
+              <option *ngFor="let item of filieres; trackBy: trackById" [value]="item.id">{{ item.nom }}</option>
+            </select>
+          </div>
+
+          <div class="grid grid-2 assign-grid" *ngIf="selectedAssignationFiliereId; else noAssignation">
+            <div class="assign-column card-soft">
+              <h3>Cours assignés</h3>
+              <div class="assign-list" *ngIf="assignedCours.length; else noAssigned">
+                <article class="assign-item assigned" *ngFor="let item of assignedCours; trackBy: trackById">
+                  <div>
+                    <strong>{{ item.nom }}</strong>
+                    <p class="muted">{{ item.categorie }} · {{ item.niveau }}</p>
+                  </div>
+                  <button type="button" class="icon-btn danger" (click)="removeCours(item.id)" [disabled]="loadingAction">✕</button>
+                </article>
+              </div>
+            </div>
+
+            <div class="assign-column card-soft">
+              <h3>Tous les cours disponibles</h3>
+              <div class="assign-list" *ngIf="availableCours.length; else noCoursAvailable">
+                <article class="assign-item" *ngFor="let item of availableCours; trackBy: trackById">
+                  <div>
+                    <strong>{{ item.nom }}</strong>
+                    <p class="muted">{{ item.categorie }} · {{ item.niveau }}</p>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-light small-btn"
+                    [disabled]="loadingAction || isAssigned(item.id)"
+                    (click)="assignCours(item.id)">
+                    {{ isAssigned(item.id) ? 'Assigné' : 'Assigner' }}
+                  </button>
+                </article>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </ng-container>
+
+    <ng-template #noFilieres>
+      <div class="empty-state">Aucune filière pour le moment.</div>
+    </ng-template>
+
+    <ng-template #noCours>
+      <div class="empty-state">Aucun cours pour le moment.</div>
+    </ng-template>
+
+    <ng-template #noAssignation>
+      <div class="empty-state">Ajoute d’abord une filière pour gérer les assignations.</div>
+    </ng-template>
+
+    <ng-template #noAssigned>
+      <div class="empty-state compact">Aucun cours assigné à cette filière.</div>
+    </ng-template>
+
+    <ng-template #noCoursAvailable>
+      <div class="empty-state compact">Aucun cours disponible.</div>
+    </ng-template>
+  </div>
+
+  <div class="login-overlay" *ngIf="!authenticated">
+    <div class="login-card card">
+      <span class="eyebrow">Accès protégé</span>
+      <h2>Connexion administrateur</h2>
+      <p class="muted">Entre le login et le mot de passe admin pour gérer Campus Passerelle.</p>
+
+      <form [formGroup]="loginForm" (ngSubmit)="submitLogin()" class="login-form">
+        <div class="field">
+          <label for="campus-admin-username">Login</label>
+          <input id="campus-admin-username" type="text" formControlName="username" placeholder="admin" />
+        </div>
+
+        <div class="field">
+          <label for="campus-admin-password">Mot de passe</label>
+          <input id="campus-admin-password" type="password" formControlName="password" placeholder="••••••••" />
+        </div>
+
+        <div class="status error-state" *ngIf="loginError">{{ loginError }}</div>
+
+        <button type="submit" class="btn btn-primary full-width" [disabled]="loadingLogin">
+          {{ loadingLogin ? 'Vérification...' : 'Ouvrir l’espace admin' }}
+        </button>
+      </form>
+    </div>
+  </div>
+</section>

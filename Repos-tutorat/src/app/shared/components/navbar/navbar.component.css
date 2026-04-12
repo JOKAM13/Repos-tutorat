@@ -108,4 +108,20 @@
   .navbar {
     flex-wrap: wrap;
   }
+
+  .nav-passerelle {
+  background: linear-gradient(135deg, #eef2ff, #dbeafe);
+  color: #1d4ed8 !important;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  border: 1px solid #bfdbfe;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.12);
+}
+
+.nav-passerelle:hover {
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  transform: translateY(-1px);
+}
+  
 }

@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { finalize } from 'rxjs';
 import { InquiryApiService } from '../../core/services/inquiry-api.service';
+import { RouterModule } from '@angular/router';
 
 interface BenefitItem {
   title: string;
@@ -42,14 +43,14 @@ export class HomeComponent {
   readonly pricePlans: PricePlan[] = [
     {
       level: 'Primaire et secondaire',
-      online: '30 $ / h',
-      inPerson: '35 $ / h',
+      online: 'À partir de 25 $ / h',
+      inPerson: 'À partir de 30 $ / h',
       note: 'Approche claire, reprise des bases et aide aux devoirs.'
     },
     {
       level: 'Cégep et université',
-      online: '35 $ / h',
-      inPerson: '40 $ / h',
+      online: 'À partir de 25 $ / h',
+      inPerson: 'À partir de 30 $ / h',
       note: 'Pour les cours plus avancés, la méthodologie de travail, la préparation aux examens et l’accompagnement ciblé selon la matière.'
     },
     {
@@ -74,7 +75,8 @@ export class HomeComponent {
     need: [''],
     mode: ['En ligne'],
     availability: [''],
-    city: ['']
+    city: [''],
+    acceptPrivacy: [false, [Validators.requiredTrue]]
   });
 
   readonly tutorApplicationForm = this.formBuilder.group({
@@ -87,14 +89,16 @@ export class HomeComponent {
     about: [''],
     mode: ['En ligne'],
     city: [''],
-    availability: ['']
+    availability: [''],
+    acceptPrivacy: [false, [Validators.requiredTrue]]
   });
 
   readonly contactForm = this.formBuilder.group({
     fullName: ['', [Validators.required]],
     email: ['', [Validators.required, Validators.email]],
     phone: [''],
-    message: ['', [Validators.required]]
+    message: ['', [Validators.required]],
+    acceptPrivacy: [false, [Validators.requiredTrue]]
   });
 
   tutorRequestState: 'idle' | 'success' | 'error' = 'idle';
@@ -125,7 +129,7 @@ export class HomeComponent {
       .subscribe({
         next: () => {
           this.tutorRequestState = 'success';
-          this.tutorRequestForm.reset({ mode: 'En ligne' });
+          this.tutorRequestForm.reset({ mode: 'En ligne', acceptPrivacy: false });
         },
         error: () => {
           this.tutorRequestState = 'error';
@@ -148,7 +152,7 @@ export class HomeComponent {
       .subscribe({
         next: () => {
           this.tutorApplicationState = 'success';
-          this.tutorApplicationForm.reset({ mode: 'En ligne' });
+          this.tutorApplicationForm.reset({ mode: 'En ligne', acceptPrivacy: false });
         },
         error: () => {
           this.tutorApplicationState = 'error';
@@ -171,7 +175,7 @@ export class HomeComponent {
       .subscribe({
         next: () => {
           this.contactState = 'success';
-          this.contactForm.reset();
+          this.contactForm.reset({ acceptPrivacy: false });
         },
         error: () => {
           this.contactState = 'error';

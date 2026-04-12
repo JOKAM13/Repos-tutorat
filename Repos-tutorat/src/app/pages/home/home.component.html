@@ -58,6 +58,8 @@
       </div>
     </div>
   </div>
+
+  
 </section>
 
 <section class="section-tight">
@@ -177,6 +179,23 @@
           <textarea id="student-need" formControlName="need" placeholder="Explique la matière, le niveau et l’objectif recherché."></textarea>
         </div>
 
+        <div class="field checkbox-field">
+          <div class="checkbox-row">
+            <input id="acceptPrivacyTutorRequest" type="checkbox" formControlName="acceptPrivacy" />
+            <label for="acceptPrivacyTutorRequest">
+              J’ai lu et j’accepte la
+            </label>
+            <a href="/politique-confidentialite" target="_blank" rel="noopener">
+              politique de confidentialité
+            </a>
+            <span>d’ÉtudeRéussie.</span>
+          </div>
+
+          <small class="error" *ngIf="hasError('tutorRequest', 'acceptPrivacy')">
+            Tu dois accepter la politique de confidentialité avant d’envoyer.
+          </small>
+        </div>
+
         <button type="submit" class="btn btn-primary submit-btn" [disabled]="loadingTutorRequest">
           {{ loadingTutorRequest ? 'Envoi en cours...' : 'Envoyer la demande' }}
         </button>
@@ -251,6 +270,23 @@
           <textarea id="tutor-about" formControlName="about" placeholder="Parle de ton parcours, de ta pédagogie et de ton expérience."></textarea>
         </div>
 
+            <div class="field checkbox-field">
+              <div class="checkbox-row">
+                <input id="acceptPrivacyTutorApplication" type="checkbox" formControlName="acceptPrivacy" />
+                <label for="acceptPrivacyTutorApplication">
+                  J’ai lu et j’accepte la
+                </label>
+                <a href="/politique-confidentialite" target="_blank" rel="noopener">
+                  politique de confidentialité
+                </a>
+                <span>d’Étude Réussie.</span>
+              </div>
+
+          <small class="error" *ngIf="hasError('tutorApplication', 'acceptPrivacy')">
+            Tu dois accepter la politique de confidentialité avant d’envoyer.
+          </small>
+        </div>
+
         <button type="submit" class="btn btn-secondary submit-btn" [disabled]="loadingTutorApplication">
           {{ loadingTutorApplication ? 'Envoi en cours...' : 'Soumettre la candidature' }}
         </button>
@@ -272,7 +308,7 @@
       <div class="contact-list">
         <div class="panel">
           <strong>Courriel</strong>
-          <p class="muted"></p>
+          <p class="muted">etudereussie&#64;gmail.com</p>
         </div>
         <div class="panel">
           <strong>Téléphone</strong>
@@ -309,6 +345,23 @@
         <small class="error" *ngIf="hasError('contact', 'message')">Le message est obligatoire.</small>
       </div>
 
+      <div class="field checkbox-field">
+  <div class="checkbox-row">
+    <input id="acceptPrivacyContact" type="checkbox" formControlName="acceptPrivacy" />
+    <label for="acceptPrivacyContact">
+      J’ai lu et j’accepte la
+    </label>
+    <a href="/politique-confidentialite" target="_blank" rel="noopener">
+      politique de confidentialité
+    </a>
+    <span>d’Étude Réussie.</span>
+  </div>
+
+  <small class="error" *ngIf="hasError('contact', 'acceptPrivacy')">
+    Tu dois accepter la politique de confidentialité avant d’envoyer.
+  </small>
+</div>
+
       <button type="submit" class="btn btn-primary">{{ loadingContact ? 'Envoi en cours...' : 'Envoyer le message' }}</button>
 
       <div class="status success" *ngIf="contactState === 'success'">Le message a bien été enregistré dans la base de données.</div>
@@ -316,3 +369,8 @@
     </form>
   </div>
 </section>
+
+<a class="floating-support-btn" href="/#contact" aria-label="Nous contacter">
+  <span class="floating-support-icon">💬</span>
+  <span class="floating-support-text">Nous contacter</span>
+</a>

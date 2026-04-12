@@ -3,7 +3,7 @@
     <a class="brand" routerLink="/" (click)="closeMenus()">
       <span class="brand-mark">ER</span>
       <span class="brand-copy">
-        <strong>Étude Réussie</strong>
+        <strong>ÉtudeRéussie</strong>
         <small>Trouver un tuteur facilement</small>
       </span>
     </a>
@@ -12,11 +12,14 @@
       ☰
     </button>
 
+   
     <nav class="nav-links" [class.open]="menuOpen">
       <a href="#accueil" (click)="closeMenus()">Accueil</a>
+
+        <a href="/campus-passerelle" class="nav-passerelle" (click)="closeMenus()">
+        Campus Passerelle
+      </a>
       <a href="#tarifs" (click)="closeMenus()">Prix</a>
-      <a href="#trouver" (click)="closeMenus()">Trouver un tuteur</a>
-      <a href="#devenir" (click)="closeMenus()">Devenir tuteur</a>
       <a href="#contact" (click)="closeMenus()">Contact</a>
     </nav>
 
@@ -24,5 +27,6 @@
       <a href="#trouver" class="btn btn-light" (click)="closeMenus()">Trouver un tuteur</a>
       <a href="#devenir" class="btn btn-primary" (click)="closeMenus()">Devenir tuteur</a>
     </div>
+    
   </div>
 </header>
