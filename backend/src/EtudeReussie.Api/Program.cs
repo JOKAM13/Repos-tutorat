@@ -7,9 +7,9 @@ using Microsoft.OpenApi.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
-                      ?? "Data Source=App_Data/etude-reussie-dev.db";
+                      ?? throw new InvalidOperationException("La chaîne de connexion DefaultConnection est manquante.");
 
-if (builder.Environment.IsProduction() && connectionString.Contains("dev", StringComparison.OrdinalIgnoreCase))
+/*if (builder.Environment.IsProduction() && connectionString.Contains("dev", StringComparison.OrdinalIgnoreCase))
 {
     throw new InvalidOperationException("La production ne doit pas utiliser la base de donnees de developpement.");
 }
@@ -17,7 +17,7 @@ if (builder.Environment.IsProduction() && connectionString.Contains("dev", Strin
 if (builder.Environment.IsDevelopment() && connectionString.Contains("prod", StringComparison.OrdinalIgnoreCase))
 {
     throw new InvalidOperationException("Le developpement ne doit pas utiliser la base de donnees de production.");
-}
+}*/
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
@@ -30,9 +30,15 @@ builder.Services.AddSwaggerGen(options =>
         Description = "API pour enregistrer les demandes Trouver un tuteur, Devenir tuteur et les messages de contact."
     });
 });
-builder.Services.Configure<AdminAccessOptions>(builder.Configuration.GetSection(AdminAccessOptions.SectionName));
+
+builder.Services.Configure<AdminAccessOptions>(
+    builder.Configuration.GetSection(AdminAccessOptions.SectionName));
+
 builder.Services.AddSingleton<AdminSessionStore>();
-builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlite(connectionString));
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseNpgsql(connectionString));
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("frontend", policy =>
@@ -49,12 +55,10 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-Directory.CreateDirectory(Path.Combine(app.Environment.ContentRootPath, "App_Data"));
-
 using (var scope = app.Services.CreateScope())
 {
     var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    dbContext.Database.EnsureCreated();
+    dbContext.Database.Migrate();
 }
 
 if (app.Environment.IsDevelopment())
@@ -75,6 +79,10 @@ if (!app.Environment.IsDevelopment())
 app.UseCors("frontend");
 app.MapControllers();
 
-app.MapGet("/api/health", () => Results.Ok(new { status = "ok", message = "API Étude Réussie opérationnelle" }));
+app.MapGet("/api/health", () => Results.Ok(new
+{
+    status = "ok",
+    message = "API Étude Réussie opérationnelle"
+}));
 
 app.Run();
