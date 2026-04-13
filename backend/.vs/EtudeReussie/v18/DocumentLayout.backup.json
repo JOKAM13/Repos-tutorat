@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git 2\\backend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|c:\\users\\lenat\\desktop\\repos tutorat\\repos git 2\\backend\\src\\etudereussie.api\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|solutionrelative:src\\etudereussie.api\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|c:\\users\\lenat\\desktop\\repos tutorat\\repos git 2\\backend\\src\\etudereussie.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{A125A020-BE8C-4A54-9ACB-3E6F6A734487}|src\\EtudeReussie.Api\\EtudeReussie.Api.csproj|solutionrelative:src\\etudereussie.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -75,6 +79,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git 2\\backend\\src\\EtudeReussie.Api\\Dockerfile",
+              "RelativeDocumentMoniker": "src\\EtudeReussie.Api\\Dockerfile",
+              "ToolTip": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git 2\\backend\\src\\EtudeReussie.Api\\Dockerfile",
+              "RelativeToolTip": "src\\EtudeReussie.Api\\Dockerfile",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-04-12T16:38:12.618Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git 2\\backend\\src\\EtudeReussie.Api\\appsettings.json",
               "RelativeDocumentMoniker": "src\\EtudeReussie.Api\\appsettings.json",
@@ -87,7 +104,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git 2\\backend\\src\\EtudeReussie.Api\\appsettings.Development.json",
               "RelativeDocumentMoniker": "src\\EtudeReussie.Api\\appsettings.Development.json",
@@ -99,7 +116,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git 2\\backend\\src\\EtudeReussie.Api\\Program.cs",
               "RelativeDocumentMoniker": "src\\EtudeReussie.Api\\Program.cs",
@@ -111,7 +128,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "appsettings.Production.json",
               "DocumentMoniker": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git 2\\backend\\src\\EtudeReussie.Api\\appsettings.Production.json",
               "RelativeDocumentMoniker": "src\\EtudeReussie.Api\\appsettings.Production.json",
@@ -123,7 +140,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "AdminCampusPasserelleController.cs",
               "DocumentMoniker": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git 2\\backend\\src\\EtudeReussie.Api\\Controllers\\AdminCampusPasserelleController.cs",
               "RelativeDocumentMoniker": "src\\EtudeReussie.Api\\Controllers\\AdminCampusPasserelleController.cs",
@@ -135,7 +152,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "CampusPasserelleController.cs",
               "DocumentMoniker": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git 2\\backend\\src\\EtudeReussie.Api\\Controllers\\CampusPasserelleController.cs",
               "RelativeDocumentMoniker": "src\\EtudeReussie.Api\\Controllers\\CampusPasserelleController.cs",
@@ -147,7 +164,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "AdminController.cs",
               "DocumentMoniker": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git 2\\backend\\src\\EtudeReussie.Api\\Controllers\\AdminController.cs",
               "RelativeDocumentMoniker": "src\\EtudeReussie.Api\\Controllers\\AdminController.cs",
@@ -159,7 +176,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "ContactMessagesController.cs",
               "DocumentMoniker": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git 2\\backend\\src\\EtudeReussie.Api\\Controllers\\ContactMessagesController.cs",
               "RelativeDocumentMoniker": "src\\EtudeReussie.Api\\Controllers\\ContactMessagesController.cs",
@@ -171,7 +188,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git 2\\backend\\src\\EtudeReussie.Api\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "src\\EtudeReussie.Api\\Data\\AppDbContext.cs",
@@ -183,7 +200,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "AdminAccessOptions.cs",
               "DocumentMoniker": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git 2\\backend\\src\\EtudeReussie.Api\\Options\\AdminAccessOptions.cs",
               "RelativeDocumentMoniker": "src\\EtudeReussie.Api\\Options\\AdminAccessOptions.cs",
@@ -195,7 +212,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "CreateTutorApplicationDto.cs",
               "DocumentMoniker": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git 2\\backend\\src\\EtudeReussie.Api\\Dtos\\CreateTutorApplicationDto.cs",
               "RelativeDocumentMoniker": "src\\EtudeReussie.Api\\Dtos\\CreateTutorApplicationDto.cs",
@@ -207,7 +224,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "CreateContactMessageDto.cs",
               "DocumentMoniker": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git 2\\backend\\src\\EtudeReussie.Api\\Dtos\\CreateContactMessageDto.cs",
               "RelativeDocumentMoniker": "src\\EtudeReussie.Api\\Dtos\\CreateContactMessageDto.cs",
@@ -219,7 +236,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "EtudeReussie.Api.csproj",
               "DocumentMoniker": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git 2\\backend\\src\\EtudeReussie.Api\\EtudeReussie.Api.csproj",
               "RelativeDocumentMoniker": "src\\EtudeReussie.Api\\EtudeReussie.Api.csproj",
@@ -231,7 +248,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\lenat\\Desktop\\repos tutorat\\repos git 2\\backend\\src\\EtudeReussie.Api\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "src\\EtudeReussie.Api\\Properties\\launchSettings.json",
