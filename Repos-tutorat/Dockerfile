@@ -1,13 +1,14 @@
 FROM node:20-alpine AS build
 WORKDIR /app
 
-COPY Repos-tutorat/package.json Repos-tutorat/package-lock.json ./
+COPY package.json package-lock.json ./
 RUN npm install
 
-COPY Repos-tutorat/ ./
+COPY . .
 RUN npm run build -- --configuration production
 
 FROM nginx:alpine
-COPY --from=build /app/dist /usr/share/nginx/html
+RUN rm -rf /usr/share/nginx/html/*
+COPY --from=build /app/dist/etude-reussie-angular-ui/browser /usr/share/nginx/html
 
 EXPOSE 80
