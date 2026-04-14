@@ -25,4 +25,10 @@ public class ContactMessagesController(AppDbContext dbContext) : ControllerBase
 
         return Created($"/api/contact-messages/{entity.Id}", new { entity.Id, message = "Message enregistré" });
     }
+
+    [HttpGet("test")]
+    public IActionResult Test()
+    {
+        return Ok(new { status = "ok", message = "route de test fonctionne" });
+    }
 }
