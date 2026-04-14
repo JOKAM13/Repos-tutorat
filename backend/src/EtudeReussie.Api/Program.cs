@@ -38,7 +38,7 @@ builder.Services.AddSingleton<AdminSessionStore>();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(connectionString));
-
+/*
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("frontend", policy =>
@@ -47,7 +47,7 @@ builder.Services.AddCors(options =>
             .AllowAnyHeader()
             .AllowAnyMethod();
     });
-});
+});*/
 
 var app = builder.Build();
 
