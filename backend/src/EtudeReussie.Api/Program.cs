@@ -49,6 +49,7 @@ builder.Services.AddCors(options =>
                 "https://localhost:4200",
                  "https://etudereussie.ca",
                   "https://www.etudereussie.ca",
+                  "https://admin.etudereussie.ca",
                 "https://localhost:4300")
             .AllowAnyHeader()
             .AllowAnyMethod();
