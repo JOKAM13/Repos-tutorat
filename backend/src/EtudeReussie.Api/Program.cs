@@ -43,14 +43,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("frontend", policy =>
     {
-        policy.WithOrigins(
-                "http://localhost:4200",
-                "http://localhost:4300",
-                "https://localhost:4200",
-                 "https://etudereussie.ca",
-                  "https://www.etudereussie.ca",
-                  "https://admin.etudereussie.ca",
-                "https://localhost:4300")
+        policy.AllowAnyOrigin()
             .AllowAnyHeader()
             .AllowAnyMethod();
     });
