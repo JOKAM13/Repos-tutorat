@@ -9,16 +9,6 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
                       ?? throw new InvalidOperationException("La chaîne de connexion DefaultConnection est manquante.");
 
-/*if (builder.Environment.IsProduction() && connectionString.Contains("dev", StringComparison.OrdinalIgnoreCase))
-{
-    throw new InvalidOperationException("La production ne doit pas utiliser la base de donnees de developpement.");
-}
-
-if (builder.Environment.IsDevelopment() && connectionString.Contains("prod", StringComparison.OrdinalIgnoreCase))
-{
-    throw new InvalidOperationException("Le developpement ne doit pas utiliser la base de donnees de production.");
-}*/
-
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
@@ -38,7 +28,7 @@ builder.Services.AddSingleton<AdminSessionStore>();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(connectionString));
-/*
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("frontend", policy =>
@@ -47,7 +37,7 @@ builder.Services.AddCors(options =>
             .AllowAnyHeader()
             .AllowAnyMethod();
     });
-});*/
+});
 
 var app = builder.Build();
 
@@ -57,20 +47,12 @@ using (var scope = app.Services.CreateScope())
     dbContext.Database.Migrate();
 }
 
-if (app.Environment.IsDevelopment())
+app.UseSwagger();
+app.UseSwaggerUI(options =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI(options =>
-    {
-        options.SwaggerEndpoint("/swagger/v1/swagger.json", "Étude Réussie API v1");
-        options.RoutePrefix = "swagger";
-    });
-}
-
-if (!app.Environment.IsDevelopment())
-{
-    app.UseHttpsRedirection();
-}
+    options.SwaggerEndpoint("/swagger/v1/swagger.json", "Étude Réussie API v1");
+    options.RoutePrefix = "swagger";
+});
 
 app.UseCors("frontend");
 app.MapControllers();
