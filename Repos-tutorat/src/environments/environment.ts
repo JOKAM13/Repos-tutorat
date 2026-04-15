@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiBaseUrl: 'https://admin.etudereussie.ca/api'
+  apiBaseUrl: 'https://analytics.etudereussie.ca/api',
 };
